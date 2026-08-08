@@ -8,10 +8,18 @@ function App() {
   const [counter, setCounter] = useState(15)
   const addValue = () => {
     console.log('Add Value button clicked', Math.random())
+    if (counter === 20) {
+      alert('Counter value cannot be more than 20')
+      return
+    }
     setCounter(counter + 1)
   }
   const valueRemoved = () => {
     console.log('Remove Value button clicked', Math.random())
+    if (counter === 0) {
+      alert('Counter value cannot be less than 0')
+      return
+    }
     setCounter(counter - 1)
   }
 
